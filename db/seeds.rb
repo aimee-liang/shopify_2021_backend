@@ -9,4 +9,4 @@ require 'uri'
 require 'net/http'
 require 'JSON'
 
-uri = URI.parse("http://www.omdbapi.com/?apikey=[yourkey]&")
+uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&")
