@@ -10,3 +10,19 @@ require 'net/http'
 require 'JSON'
 
 uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&")
+request = Net::HTTP::Get.new(uri)
+request["Accept"] = "application/json"
+
+req_options = {
+    use_ssl: uri.scheme == "https"
+}
+
+response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+    http.request(request)
+end
+
+movie_array = JSON.parse(response.body)
+
+movie_array.each do |movie|
+        
+end
