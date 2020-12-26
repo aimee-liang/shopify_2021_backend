@@ -9,7 +9,7 @@ require 'uri'
 require 'net/http'
 require 'JSON'
 
-uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&")
+uri = URI.parse("OMDB_API")
 request = Net::HTTP::Get.new(uri)
 request["Accept"] = "application/json"
 
@@ -24,5 +24,5 @@ end
 movie_array = JSON.parse(response.body)
 
 movie_array.each do |movie|
-        
+
 end
