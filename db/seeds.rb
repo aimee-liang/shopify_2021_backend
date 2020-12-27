@@ -8,8 +8,10 @@
 require 'uri'
 require 'net/http'
 require 'JSON'
+require 'omdb/api'
 
-uri = URI.parse("OMDB_API")
+uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&
+    ")
 request = Net::HTTP::Get.new(uri)
 request["Accept"] = "application/json"
 
