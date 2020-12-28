@@ -5,26 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'uri'
-require 'net/http'
-require 'JSON'
-require 'omdb/api'
 
-uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&
-    ")
-request = Net::HTTP::Get.new(uri)
-request["Accept"] = "application/json"
 
-req_options = {
-    use_ssl: uri.scheme == "https"
-}
+# require 'uri'
+# require 'net/http'
+# require 'JSON'
+# require 'omdb/api'
 
-response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-    http.request(request)
-end
+# uri = URI.parse("http://www.omdbapi.com/?apikey=[OMDB_API_KEY]&
+#     ")
+# request = Net::HTTP::Get.new(uri)
+# request["Accept"] = "application/json"
 
-movie_array = JSON.parse(response.body)
+# req_options = {
+#     use_ssl: uri.scheme == "https"
+# }
 
-movie_array.each do |movie|
+# response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+#     http.request(request)
+# end
 
-end
+# movie_array = JSON.parse(response.body)
+
+# movie_array.each do |movie|
+
+# end
